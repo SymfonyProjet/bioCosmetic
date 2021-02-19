@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ produit.nom }}
+{% endblock %}
+
+{% block body %}
+	<div class="container w-50">
+		<h1 class="text-center my-5">{{ produit.nom }}</h1>
+
+		<table class="table">
+			<tbody>
+				<tr>
+					<td><img class="img img-large" src="{{ produit.image }}" alt="{{ produit.nom }}"></td>
+				</tr>
+				<tr>
+					<th>Nom</th>
+					<td>{{ produit.nom }}</td>
+				</tr>
+				<tr>
+					<th>Marque</th>
+					<td>{{ produit.marque }}</td>
+				</tr>
+				<tr>
+					<th>Categorie</th>
+					<td>{{ produit.categorie }}</td>
+				</tr>
+				<tr>
+					<th>Description</th>
+					<td>
+						<small>
+							{{ produit.description }}
+						</small>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<a class="btn btn-info" href="{{ path('produits_index') }}">
+			Retour
+		</a>
+
+		<a class="btn btn-warning" href="{{ path('produits_edit', {'id': produit.id}) }}">
+			Modifier
+		</a>
+
+		{{ include('produits/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

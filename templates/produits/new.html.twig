@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Produits
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Ajouter un nouveau produit</h1>
+
+		{{ include('produits/_form.html.twig') }}
+
+		<a class="btn btn-info mt-3" href="{{ path('produits_index') }}">
+			<i class="fas fa-arrow-left"></i>
+			retour
+		</a>
+	</div>
+{% endblock %}
